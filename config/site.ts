@@ -3,7 +3,7 @@ export const SITE = {
   tagline: "Run your team without the tab switching.",
   description:
     "Novi brings tasks, docs, and conversations into one calm workspace built for small, fast moving teams.",
-  url: "https://novi-project.vercel.app",
+  url: "https://novi-dusky.vercel.app",
   locale: "en_US",
   twitterHandle: "@novi",
   since: 2026,

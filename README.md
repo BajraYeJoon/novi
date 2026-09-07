@@ -30,7 +30,7 @@ npm run start
 
 The app is deployed on **Vercel**
 
-> Deployed preview link: _https://novi-project.vercel.app_
+> Deployed preview link: _https://novi-dusky.vercel.app_
 
 ## Repository structure
 
