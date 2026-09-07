@@ -3,34 +3,12 @@ export const SITE = {
   tagline: "Run your team without the tab switching.",
   description:
     "Novi brings tasks, docs, and conversations into one calm workspace built for small, fast moving teams.",
-  url: "https://novi.app",
+  url: "https://novi-project.vercel.app",
   locale: "en_US",
   twitterHandle: "@novi",
   since: 2026,
 } as const;
 
-export const PRODUCT_LINKS = [
-  {
-    label: "Tasks",
-    href: "#features",
-    description: "Plan, track, and ship work with shared boards.",
-  },
-  {
-    label: "Docs",
-    href: "#features",
-    description: "Write, share, and collaborate in one place.",
-  },
-  {
-    label: "Conversations",
-    href: "#features",
-    description: "Keep every discussion tied to the work.",
-  },
-  {
-    label: "AI Insights",
-    href: "#features",
-    description: "Know what needs your attention next.",
-  },
-] as const;
 
 export const NAV_LINKS = [
   { label: "Features", href: "#features" },
@@ -69,4 +47,4 @@ export const FOOTER_GROUPS = [
       { label: "Terms of Service", href: "/terms" },
     ],
   },
-] as const;
+];

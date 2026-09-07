@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Archivo, Karla } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import NoviWatermark from "@/components/layout/NoviWatermark";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import { getMetadata, viewport as siteViewport, jsonLd } from "@/lib/metadata";
 import "lenis/dist/lenis.css";
@@ -29,16 +30,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col">
         <SmoothScroll>
           <Navbar />
-          <div className="relative w-full bg-[#f0f2f6]">
-            <div className="relative z-10 bg-[#f0f2f6]">
+          <div className="relative w-full bg-background">
+            <div className="relative z-10 bg-background">
               {children}
               <Footer />
             </div>
-            <div className="sticky bottom-0 z-0 -mt-8 flex h-[40vh] w-full items-center justify-center overflow-hidden bg-[#101011]">
-              <p className="pointer-events-none select-none text-center text-[190px] font-bold leading-none tracking-[-0.05em] text-zinc-400/20 sm:text-[260px] md:text-[340px]">
-                novi
-              </p>
-            </div>
+            <NoviWatermark />
           </div>
           <script
             type="application/ld+json"

@@ -37,7 +37,7 @@ export default function SectionHeading({
           initial={false}
           animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : { opacity: 0, y: 12, filter: "blur(5px)" }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="text-[14px] tracking-[-0.014em] text-[#5235ef]"
+          className="text-[14px] md:text-lg  text-brand-purple"
         >
           [{badge}]
         </motion.span>

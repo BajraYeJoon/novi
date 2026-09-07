@@ -1,45 +1,27 @@
 @import "tailwindcss";
 
-/*
- * Novi design system
- * Semantic tokens mapped to Tailwind utilities:
- * e.g. bg-background, text-foreground, bg-primary, text-muted-foreground, border-border
- */
 @theme {
   --font-sans: var(--font-karla);
   --font-display: var(--font-archivo);
   --font-body: var(--font-karla);
 
-  /* Base */
-  --color-background: #f0f2f6;
+  --color-background: #eefbff;
   --color-foreground: #101011;
   --color-card: #ffffff;
   --color-card-foreground: #101011;
 
-  /* Text & surfaces */
   --color-muted: #e8eaee;
   --color-muted-foreground: #606266;
   --color-border: rgba(16, 16, 17, 0.08);
 
-  /* Interactive */
   --color-primary: #101011;
   --color-primary-foreground: #ffffff;
-  --color-accent: #8f82ff;
-  --color-accent-foreground: #ffffff;
   --color-ring: #8f82ff;
 
-  /* Brand palette */
   --color-brand-purple: #8f82ff;
   --color-brand-green: #c9ff85;
   --color-brand-yellow: #ffd86f;
   --color-brand-lavender: #edf0ff;
-
-  /* Radii */
-  --radius-sm: 0.5rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
-  --radius-2xl: 2rem;
 }
 
 body {
@@ -58,9 +40,4 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
-}
-
-::selection {
-  background: var(--color-accent);
-  color: var(--color-accent-foreground);
 }

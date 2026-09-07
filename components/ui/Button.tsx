@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import type { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
 
 type Variant = "primary" | "secondary" | "ghost";
@@ -40,7 +41,7 @@ export default function Button({ variant = "primary", size = "md", className, ..
 
   if ("href" in props && props.href !== undefined) {
     const { href, ...rest } = props as ButtonAsAnchor;
-    return <a href={href} className={classes} {...rest} />;
+    return <Link href={href} className={classes} {...rest} />;
   }
 
   return <button className={classes} {...(props as ButtonAsButton)} />;

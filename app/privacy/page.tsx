@@ -12,7 +12,7 @@ export default function PrivacyPage() {
     <SimplePage
       title="Privacy Policy"
       description="Your data stays yours. We only collect what we need to run the product."
-      body="We never sell your personal information. This is a placeholder — the full policy will describe what we store, why, and how you can request deletion."
+      body="We never sell your personal information. We only store what we need to run the product — your account, your team's data, and nothing else. You can export or delete it whenever you like."
     />
   );
 }

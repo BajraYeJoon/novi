@@ -1,29 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "motion/react";
+import Link from "next/link";
+import { motion } from "motion/react";
 import { Sparkle } from "lucide-react";
 import { SITE } from "@/config/site";
-
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
-};
+import { blurIn } from "@/lib/motion";
 
 export default function HeroSection() {
-  const reduce = useReducedMotion();
-
-  const heroState = reduce ? { hidden: { opacity: 1, y: 0 } } : fadeUp;
-
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden bg-[#0a0a0a] text-white"
+      className="relative w-full overflow-hidden bg-foreground text-white"
     >
       <div className="absolute inset-0">
         <Image
@@ -36,23 +24,15 @@ export default function HeroSection() {
         />
       </div>
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className="relative mx-auto flex w-full max-w-[1300px] flex-col items-center gap-[48px] px-6 md:gap-[52px] md:px-[60px]"
-      >
-        <motion.div
-          variants={heroState}
-          className="flex w-full flex-col items-center gap-6 pt-24 md:gap-6 md:pt-[120px]"
-        >
+      <div className="relative mx-auto flex w-full max-w-[1300px] flex-col items-center gap-8 px-6 md:gap-[52px] md:px-[60px]">
+        <div className="flex w-full flex-col items-center gap-6 pt-28 md:gap-6 md:pt-[120px]">
           <motion.span
-            variants={heroState}
-            className="flex w-min items-center gap-2 whitespace-nowrap rounded-full bg-[#0454ff] py-[9px] pl-[10px] pr-[18px] text-[14px] leading-[1.2] text-white shadow-[inset_0_0.5px_1px_rgba(255,255,255,0.23)]"
+            {...blurIn(0)}
+            className="flex w-min items-center gap-2 whitespace-nowrap rounded-full py-[9px] pl-[10px] pr-[18px] text-[14px] leading-[1.2] text-white shadow-[inset_0_0.5px_1px_rgba(255,255,255,0.23)]"
           >
             <motion.span
               aria-hidden
-              animate={reduce ? { rotate: 0 } : { rotate: 360 }}
+              animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
               className="flex shrink-0"
             >
@@ -62,49 +42,49 @@ export default function HeroSection() {
           </motion.span>
 
           <motion.h1
-            variants={heroState}
+            {...blurIn(0.12)}
             className="w-full text-center text-[40px] font-semibold leading-[110%] tracking-[-0.04em] text-white md:w-[90%] md:text-[52px] lg:text-[64px]"
           >
-            Run your team without{" "}
-            <br className="hidden sm:block" /> the tab switching.
+            Run your team without <br className="hidden sm:block" /> the tab
+            switching.
           </motion.h1>
 
           <motion.p
-            variants={heroState}
-            className="w-full max-w-[630px] text-center text-[16px] leading-[140%] tracking-[-0.2px] text-white/70"
+            {...blurIn(0.24)}
+            className="w-full max-w-[630px] lg:max-w-[700px] text-center text-base lg:text-lg leading-[140%] tracking-[-0.2px] text-white/70"
           >
             {SITE.description}
           </motion.p>
-        </motion.div>
+        </div>
 
         <motion.div
-          variants={heroState}
-          className="flex w-full flex-col items-center justify-center gap-3 pb-8 sm:w-auto sm:flex-row sm:gap-4"
+          {...blurIn(0.36)}
+          className="flex w-full flex-col items-center justify-center gap-3 pb-6 sm:w-auto sm:flex-row sm:gap-4"
         >
-          <a
+          <Link
             href="/pricing"
-            className="flex w-full items-center justify-center whitespace-nowrap rounded-full bg-white px-8 py-4 text-[16px] font-semibold leading-[140%] text-[#101011] transition-colors hover:bg-white/85 sm:w-auto"
+            className="flex w-full items-center justify-center whitespace-nowrap rounded-full bg-white px-8 py-4 text-[16px] font-semibold leading-[140%] text-foreground transition-colors hover:bg-white/85 sm:w-auto"
           >
             Start free
-          </a>
-          <a
+          </Link>
+          <Link
             href="#features"
-            className="flex w-full items-center justify-center whitespace-nowrap rounded-full border border-white/30 bg-white/5 px-8 py-4 text-[16px] font-semibold leading-[140%] text-white backdrop-blur-sm transition-colors hover:bg-white/10 sm:w-auto"
+            className="flex w-full items-center justify-center whitespace-nowrap rounded-full border border-white/40 bg-black px-8 py-4 text-[16px] font-semibold leading-[140%] text-white transition-colors hover:bg-black/80 sm:w-auto sm:border-white/30 sm:bg-white/10 sm:backdrop-blur-md sm:hover:bg-white/15"
           >
             See how it works
-          </a>
+          </Link>
         </motion.div>
-      </motion.div>
+      </div>
 
       <motion.figure
-        initial={reduce ? { opacity: 1 } : { opacity: 0, y: 36, scale: 0.98 }}
+        initial={{ opacity: 0, y: 36, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.85, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className="relative mx-auto w-full max-w-[1440px] px-6 md:px-10"
         style={{ aspectRatio: "5 / 3" }}
       >
         <Image
-          src="/hero-image.png"
+          src="/images/hero/hero-image.png"
           alt="Novi dashboard preview"
           fill
           priority

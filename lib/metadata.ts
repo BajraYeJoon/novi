@@ -55,8 +55,6 @@ export function getMetadata({
 
 export const viewport: Viewport = {
   themeColor: "#ffffff",
-  width: "device-width",
-  initialScale: 1,
 };
 
 export const jsonLd = () => ({

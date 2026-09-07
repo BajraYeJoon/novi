@@ -12,7 +12,7 @@ export default function TermsPage() {
     <SimplePage
       title="Terms of Service"
       description="Clear, fair terms for using Novi."
-      body="This is a placeholder — the full terms will cover acceptable use, billing, and your data rights."
+      body="Using Novi means agreeing to keep your workspace yours — no spam, no scraping, no reselling. The full terms cover acceptable use, billing, and your data rights."
     />
   );
 }

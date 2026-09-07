@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FeatureCard from "./FeatureCard";
 import { featureCards } from "./features.data";
@@ -11,16 +11,14 @@ const gridVariants = {
 };
 
 export default function FeaturesSection() {
-  const reduce = useReducedMotion();
-
   return (
     <section
       id="features"
-      className="flex w-full scroll-mt-20 justify-center py-24 md:py-32"
+      className="flex w-full scroll-mt-20 justify-center py-8 md:py-14"
     >
-      <div className="flex w-full max-w-[1300px] flex-col items-center gap-14 px-3 md:gap-[56px] md:px-[30px]">
+      <div className="flex w-full max-w-[1300px] flex-col items-center gap-10 px-3 md:gap-[56px] md:px-[30px]">
         <motion.div
-          initial={reduce ? { opacity: 1 } : { opacity: 0, y: 28 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -35,7 +33,7 @@ export default function FeaturesSection() {
         <motion.div
           className="grid w-full grid-cols-1 gap-5 md:gap-6 lg:grid-cols-2 lg:gap-6"
           variants={gridVariants}
-          initial={reduce ? "show" : "hidden"}
+          initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.15 }}
         >
